@@ -2,31 +2,28 @@ package com.example.tests;
 
 import org.testng.annotations.Test;
 
-public class GroupCreationTests extends TestBase {
+public class AlsoOfGroupCreationTests extends TestBase {
+
   @Test
   public void testNonEmptyGroupCreation() throws Exception {
 	openMainPage();
     gotoGroupsPage();
     initGroupCreation();
     GroupDate group = new GroupDate();
-    group.name = "group.name2";
-    group.header = "header2";
-    group.footer = "footer2";
+    group.name = "group.name1";
+    group.header = "header1";
+    group.footer = "footer1";
 	fillGroupForm(group);
     submitGroupCreation();
     returnToGroupsPage();
   }
   
   @Test
-  public void testNonEmptyGroupCreation2() throws Exception {
+  public void testEmptyGroupCreation() throws Exception {
 	openMainPage();
     gotoGroupsPage();
     initGroupCreation();
-    GroupDate group = new GroupDate();
-    group.name = "group.name3";
-    group.header = "header3";
-    group.footer = "footer3";
-	fillGroupForm(group);
+    fillGroupForm(new GroupDate("", "", ""));
     submitGroupCreation();
     returnToGroupsPage();
   }
