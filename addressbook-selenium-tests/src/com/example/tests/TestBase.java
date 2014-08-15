@@ -10,7 +10,6 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -38,7 +37,7 @@ public class TestBase {
 	    driver.findElement(By.name("submit")).click();
 	  }
 
-	protected void fillGroupForm(GroupData group) {
+	protected void fillGroupForm(GroupDate group) {
 	    driver.findElement(By.name("group_name")).clear();
 	    driver.findElement(By.name("group_name")).sendKeys(group.name);
 	    driver.findElement(By.name("group_header")).clear();
@@ -99,32 +98,6 @@ public class TestBase {
 	    } finally {
 	      acceptNextAlert = true;
 	    }
-	  }
-
-	protected void submitAddressCreation() {
-	    driver.findElement(By.name("submit")).click();
-	  }
-
-	protected void fillAddresssForm(ContactData parameterObject) {
-	    driver.findElement(By.name("firstname")).sendKeys(parameterObject.firstname);
-	    driver.findElement(By.name("lastname")).sendKeys(parameterObject.lastname);
-	    driver.findElement(By.name("address")).sendKeys(parameterObject.address);
-	    driver.findElement(By.name("mobile")).sendKeys(parameterObject.mobtelefon);
-	    driver.findElement(By.name("email")).sendKeys(parameterObject.email);
-	    new Select(driver.findElement(By.name("bday"))).selectByVisibleText(parameterObject.date);
-	    new Select(driver.findElement(By.name("bmonth"))).selectByVisibleText(parameterObject.month);
-	    driver.findElement(By.name("byear")).sendKeys(parameterObject.year);
-	    new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(parameterObject.groupname);
-	    driver.findElement(By.name("address2")).sendKeys(parameterObject.address2);
-	    driver.findElement(By.name("phone2")).sendKeys(parameterObject.home2);
-	  }
-
-	protected void initAddressCreation() {
-	    driver.findElement(By.linkText("add new")).click();
-	  }
-
-	protected void gotoAddAddressPage() {
-	    driver.get(baseUrl + "//addressbookv4.1.4/edit.php");
 	  }
 
 }
