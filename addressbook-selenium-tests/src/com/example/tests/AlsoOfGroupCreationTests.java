@@ -9,7 +9,7 @@ public class AlsoOfGroupCreationTests extends TestBase {
 	openMainPage();
     gotoGroupsPage();
     initGroupCreation();
-    GroupDate group = new GroupDate();
+    GroupData group = new GroupData();
     group.name = "group.name1";
     group.header = "header1";
     group.footer = "footer1";
@@ -23,7 +23,7 @@ public class AlsoOfGroupCreationTests extends TestBase {
 	openMainPage();
     gotoGroupsPage();
     initGroupCreation();
-    fillGroupForm(new GroupDate("", "", ""));
+    fillGroupForm(new GroupData("", "", ""));
     submitGroupCreation();
     returnToGroupsPage();
   }

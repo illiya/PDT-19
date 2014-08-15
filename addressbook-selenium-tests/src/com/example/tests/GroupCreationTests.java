@@ -8,7 +8,7 @@ public class GroupCreationTests extends TestBase {
 	openMainPage();
     gotoGroupsPage();
     initGroupCreation();
-    GroupDate group = new GroupDate();
+    GroupData group = new GroupData();
     group.name = "group.name2";
     group.header = "header2";
     group.footer = "footer2";
@@ -22,11 +22,11 @@ public class GroupCreationTests extends TestBase {
 	openMainPage();
     gotoGroupsPage();
     initGroupCreation();
-    GroupDate group = new GroupDate();
-    group.name = "group.name3";
-    group.header = "header3";
-    group.footer = "footer3";
-	fillGroupForm(group);
+    GroupData parameterObject = new GroupData();
+    parameterObject.name = "group.name3";
+    parameterObject.header = "header3";
+    parameterObject.footer = "footer3";
+	fillGroupForm(parameterObject);
     submitGroupCreation();
     returnToGroupsPage();
   }
