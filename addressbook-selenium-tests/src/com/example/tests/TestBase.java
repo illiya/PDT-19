@@ -16,7 +16,7 @@ public class TestBase {
 	  }
 
 	protected void openMainPage() {
-	    app.driver.get(baseUrl + "/addressbookv4.1.4/group.php");
+	    app.driver.get(app.baseUrl + "/addressbookv4.1.4/group.php");
 	  }
 
 	@AfterTest
@@ -34,7 +34,7 @@ public class TestBase {
 	  }
 
 	protected void gotoAddAddressPage() {
-	    app.driver.get(baseUrl + "//addressbookv4.1.4/edit.php");
+	    app.driver.get(app.baseUrl + "//addressbookv4.1.4/edit.php");
 	  }
 
 }

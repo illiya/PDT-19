@@ -19,8 +19,10 @@ public class ApplicationManager {
 	
 	public static WebDriver driver;
 	public static String baseUrl;
-	public static boolean acceptNextAlert = true;
+	private static boolean acceptNextAlert = true;
 	private static StringBuffer verificationErrors = new StringBuffer();
+	
+	private NavigationHelper navigationHelper;
 	
 	public ApplicationManager() {
 		driver = new FirefoxDriver();
