@@ -18,7 +18,7 @@ import com.example.tests.TestBase;
 public class ApplicationManager {
 	
 	public static WebDriver driver;
-	private static String baseUrl;
+	public static String baseUrl;
 	public static boolean acceptNextAlert = true;
 	private static StringBuffer verificationErrors = new StringBuffer();
 	

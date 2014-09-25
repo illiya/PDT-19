@@ -16,7 +16,7 @@ public class TestBase {
 	  }
 
 	protected void openMainPage() {
-	    driver.get(baseUrl + "/addressbookv4.1.4/group.php");
+	    app.driver.get(baseUrl + "/addressbookv4.1.4/group.php");
 	  }
 
 	@AfterTest
@@ -26,7 +26,7 @@ public class TestBase {
 
 	private boolean isAlertPresent() {
 	    try {
-	      driver.switchTo().alert();
+	      app.driver.switchTo().alert();
 	      return true;
 	    } catch (NoAlertPresentException e) {
 	      return false;
@@ -34,7 +34,7 @@ public class TestBase {
 	  }
 
 	protected void gotoAddAddressPage() {
-	    driver.get(baseUrl + "//addressbookv4.1.4/edit.php");
+	    app.driver.get(baseUrl + "//addressbookv4.1.4/edit.php");
 	  }
 
 }
