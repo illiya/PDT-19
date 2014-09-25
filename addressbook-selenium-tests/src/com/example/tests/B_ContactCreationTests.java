@@ -1,25 +1,14 @@
 package com.example.tests;
 
-import java.util.regex.Pattern;
-import java.util.concurrent.TimeUnit;
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
-import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class UserCreationTests extends TestBase {
-
-
-  @BeforeClass
+public class B_ContactCreationTests extends TestBase {
   
 
   @Test
   public void testNonEmptyAddressCreation() throws Exception {
 	gotoAddAddressPage();
-    initAddressCreation();
+    app.initAddressCreation();
     ContactData parameterObject = new ContactData();
     parameterObject.firstname = "firstname1";
     parameterObject.lastname = "lastname1";
@@ -32,15 +21,15 @@ public class UserCreationTests extends TestBase {
     parameterObject.groupname = "group.name1";
     parameterObject.address2 = "Уже спрашивали";
     parameterObject.home2 = "Мне что, дом свой описать?";
-	fillAddresssForm(parameterObject);
-    submitAddressCreation();
+	app.fillAddresssForm(this, parameterObject);
+    app.submitAddressCreation();
     gotoAddAddressPage();
   }
   
   @Test
   public void testNonEmptyAddressCreation2() throws Exception {
 	gotoAddAddressPage();
-    initAddressCreation();
+    app.initAddressCreation();
     ContactData parameterObject = new ContactData();
     parameterObject.firstname = "firstname2";
     parameterObject.lastname = "lastname2";
@@ -50,18 +39,18 @@ public class UserCreationTests extends TestBase {
     parameterObject.date = "1";
     parameterObject.month = "May";
     parameterObject.year = "year2";
-    parameterObject.groupname = "group.name2";
+    parameterObject.groupname = "";
     parameterObject.address2 = "Не знаю, что тут написать";
     parameterObject.home2 = "home, sweat home";
-	fillAddresssForm(parameterObject);
-    submitAddressCreation();
+	app.fillAddresssForm(this, parameterObject);
+    app.submitAddressCreation();
     gotoAddAddressPage();
   }
   
   @Test
   public void testNonEmptyAddressCreation3() throws Exception {
 	gotoAddAddressPage();
-    initAddressCreation();
+    app.initAddressCreation();
     ContactData parameterObject = new ContactData("firstname3", "lastname3", "address3", "mobfone3", "email3", "22", "September", "year3", "group.name1", "Уже спрашивали", "Мне что, дом свой описать?");
     parameterObject.firstname = "firstname3";
     parameterObject.lastname = "lastname3";
@@ -71,11 +60,10 @@ public class UserCreationTests extends TestBase {
     parameterObject.date = "22";
     parameterObject.month = "September";
     parameterObject.year = "year3";
-    parameterObject.groupname = "group.name3";
     parameterObject.address2 = "Адрес, адрес, адрес";
     parameterObject.home2 = "Мой дом - моя крепость";
-	fillAddresssForm(parameterObject);
-    submitAddressCreation();
+	app.fillAddresssForm(this, parameterObject);
+    app.submitAddressCreation();
     gotoAddAddressPage();
   }
   
