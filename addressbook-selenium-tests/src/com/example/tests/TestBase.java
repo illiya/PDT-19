@@ -15,6 +15,9 @@ public class TestBase {
 		app = new ApplicationManager();
 	  }
 
+	protected void openMainPage() {
+	    app.driver.get(app.baseUrl + "/addressbookv4.1.4/group.php");
+	  }
 
 	@AfterTest
 	public void tearDown() throws Exception {

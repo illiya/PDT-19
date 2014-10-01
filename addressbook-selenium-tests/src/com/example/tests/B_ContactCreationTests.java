@@ -8,7 +8,7 @@ public class B_ContactCreationTests extends TestBase {
   @Test
   public void testNonEmptyAddressCreation() throws Exception {
 	gotoAddAddressPage();
-    app.contactHelper.initAddressCreation();
+    app.initAddressCreation();
     ContactData parameterObject = new ContactData();
     parameterObject.firstname = "firstname1";
     parameterObject.lastname = "lastname1";
@@ -21,15 +21,15 @@ public class B_ContactCreationTests extends TestBase {
     parameterObject.groupname = "group.name1";
     parameterObject.address2 = "Уже спрашивали";
     parameterObject.home2 = "Мне что, дом свой описать?";
-	app.contactHelper.fillAddresssForm(app, this, parameterObject);
-    app.contactHelper.submitAddressCreation();
+	app.fillAddresssForm(this, parameterObject);
+    app.submitAddressCreation();
     gotoAddAddressPage();
   }
   
   @Test
   public void testNonEmptyAddressCreation2() throws Exception {
 	gotoAddAddressPage();
-    app.contactHelper.initAddressCreation();
+    app.initAddressCreation();
     ContactData parameterObject = new ContactData();
     parameterObject.firstname = "firstname2";
     parameterObject.lastname = "lastname2";
@@ -42,15 +42,15 @@ public class B_ContactCreationTests extends TestBase {
     parameterObject.groupname = "";
     parameterObject.address2 = "Не знаю, что тут написать";
     parameterObject.home2 = "home, sweat home";
-	app.contactHelper.fillAddresssForm(app, this, parameterObject);
-    app.contactHelper.submitAddressCreation();
+	app.fillAddresssForm(this, parameterObject);
+    app.submitAddressCreation();
     gotoAddAddressPage();
   }
   
   @Test
   public void testNonEmptyAddressCreation3() throws Exception {
 	gotoAddAddressPage();
-    app.contactHelper.initAddressCreation();
+    app.initAddressCreation();
     ContactData parameterObject = new ContactData("firstname3", "lastname3", "address3", "mobfone3", "email3", "22", "September", "year3", "group.name1", "Уже спрашивали", "Мне что, дом свой описать?");
     parameterObject.firstname = "firstname3";
     parameterObject.lastname = "lastname3";
@@ -62,8 +62,8 @@ public class B_ContactCreationTests extends TestBase {
     parameterObject.year = "year3";
     parameterObject.address2 = "Адрес, адрес, адрес";
     parameterObject.home2 = "Мой дом - моя крепость";
-	app.contactHelper.fillAddresssForm(app, this, parameterObject);
-    app.contactHelper.submitAddressCreation();
+	app.fillAddresssForm(this, parameterObject);
+    app.submitAddressCreation();
     gotoAddAddressPage();
   }
   
